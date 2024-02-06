@@ -1,4 +1,4 @@
-# Module 11 Challenge: Professional README Generator
+# Professional README Generator
 
 ## Your Task
 
