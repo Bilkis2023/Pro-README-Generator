@@ -13,36 +13,55 @@ const promptUser = () =>
     inquirer.prompt([
         {
             type: 'input',
-            name: 'github',
-            message: 'Enter your GitHub Username',
+            name: 'title',
+            message: 'What is your project title?',
         },
         {
             type: 'input',
-            name: 'Repository',
-            message: 'What is your Repository name?',
+            name: 'description',
+            message: 'what is your project description? ',
         },
         {
             type: 'input',
-            name: 'Project Title',
-            message: 'What is the Title of your project?',
-        },
-        {
-            type: 'input',
-            name: 'sections',
-            message: 'What sections are entitled here?',
-        },
+            name: 'table of Contents',
+            message: 'Show your table of Contents?',
 
-       {
-            type: 'input',
-            name: 'License',
-            message: 'What License is here?',
         },
-
+        {
+            type: 'input', 
+            name: 'installation',
+            message: 'add Installation of your project?',
+        },
 
         {
             type: 'input',
-            name: 'linkedin',
-            message: 'Enter your LinkedIn URL.',
+            name: 'video Link ',
+            message: 'Show your Screen Video Record?',
+        },
+
+
+        {
+            type: 'list',
+            name: 'license',
+            choices: ['The Unlicense', 'Boost Software License 1.0', 'MIT License', 'Apache License 2.0', 'Mozilla Public License 2.0'],
+            message: 'What is your project License?',
+        },
+
+
+        {
+            type: 'input',
+            name: 'dependecies',
+            message: 'Add your Dependecies Tools?',
+        },
+        {
+            type: 'input',
+            name: 'gitHub username',
+            message: 'What is your GitHub username?',
+        },
+        {
+            type: 'input',
+            name: 'Additional questions',
+            message: 'Enter yout email address?',
         },
     ]);
 
@@ -50,18 +69,30 @@ const promptUser = () =>
 
 
 // function to initialize program
-function init() {
-    promptUser()
-    .then((answers) => console.log(answers) )
-    .then(() => console.log('Successfully wrote to index.html'))
-    .catch((err) => console.error(err));
+// function init() {
+//     promptUser()
+//         .then((answers) => {
+//             console.log(answers)
+//             bilkis2023 = answers.github
+//         }
+//         )
+//         .then(() => console.log('Successfully wrote to index.html'))
+//         .catch((err) => console.error(err));
 
-}
+// }
 
 
 // function call to initialize program
-init();
 
+function init() {
+    promptUser()
+        .then((answers) => writeFileAsync('PRO-README.md', generateMarkdown.js(answers)))
+        .then(() => console.log('Successfully wrote to index.html'))
+        .then((err) => console.error(err));
+
+}
+
+init()
 
 
 

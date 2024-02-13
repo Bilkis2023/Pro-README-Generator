@@ -5,7 +5,17 @@ ${renderLicenseBadge(data.license)}
 
 ## Description
 
-${data.description}`
+
+${data.title}
+${data.description}
+${data.contents}
+${data.installation}
+${data.videolink}
+${data.license}
+${data.dependecies}
+${data.gitHub}
+${data.questions}
+`
 }
 
 module.exports = generateMarkdown;
