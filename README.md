@@ -27,7 +27,7 @@ node index.js
       * Description 
       * Table of Contents 
       * Installation 
-      * Usage 
+      * Usage  
       * License 
       * Contributing 
       * Tests 

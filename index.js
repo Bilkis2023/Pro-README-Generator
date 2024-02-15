@@ -14,8 +14,9 @@ const promptUser = () =>
         {
             type: 'input',
             name: 'title',
-            message: 'What is your project title?',
+            message: 'what is your project title? ',
         },
+        
         {
             type: 'input',
             name: 'description',
@@ -23,7 +24,7 @@ const promptUser = () =>
         },
         {
             type: 'input',
-            name: 'table of Contents',
+            name: 'contents',
             message: 'Show your table of Contents?',
 
         },
@@ -35,7 +36,7 @@ const promptUser = () =>
 
         {
             type: 'input',
-            name: 'video Link ',
+            name: 'gif',
             message: 'Show your Screen Video Record?',
         },
 
@@ -55,12 +56,12 @@ const promptUser = () =>
         },
         {
             type: 'input',
-            name: 'gitHub username',
+            name: 'gitHub',
             message: 'What is your GitHub username?',
         },
         {
             type: 'input',
-            name: 'Additional questions',
+            name: 'questions',
             message: 'Enter yout email address?',
         },
     ]);
@@ -86,7 +87,7 @@ const promptUser = () =>
 
 function init() {
     promptUser()
-        .then((answers) => writeFileAsync('PRO-README.md', generateMarkdown.js(answers)))
+        .then((answers) => writeFileAsync('PRO-README.md', generateMarkdown(answers)))
         .then(() => console.log('Successfully wrote to index.html'))
         .then((err) => console.error(err));
 
